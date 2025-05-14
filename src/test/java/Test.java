@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
@@ -15,7 +16,9 @@ public class Test {
         logger.error("Some error happened!");
 
         System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
-        WebDriver driver = new ChromeDriver(); // Creating a new instance of the ChromeDriver
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("headless");
+        WebDriver driver = new ChromeDriver(options); // Creating a new instance of the ChromeDriver
 
         String s = "bugs bunny";
         driver.get("https://wikipedia.org");
