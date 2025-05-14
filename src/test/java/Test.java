@@ -14,10 +14,8 @@ public class Test {
         Logger logger = LogManager.getLogger();
         logger.error("Some error happened!");
 
-        System.setProperty("webdriver.chrome.driver", "linuxchromedriver");
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless");
-        WebDriver driver = new ChromeDriver(options); // Creating a new instance of the ChromeDriver
+        System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+        WebDriver driver = new ChromeDriver(); // Creating a new instance of the ChromeDriver
 
         String s = "bugs bunny";
         driver.get("https://wikipedia.org");
